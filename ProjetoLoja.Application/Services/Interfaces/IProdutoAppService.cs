@@ -7,5 +7,6 @@ namespace ProjetoLoja.Application.Services.Interfaces
     public interface IProdutoAppService
     {
         Task<IEnumerable<ProdutoViewModel>> ListarProdutos();
+        Task<ProdutoViewModel> CadastrarProduto(NovoProdutoViewModel novoProdutoViewModel);
     }
 }

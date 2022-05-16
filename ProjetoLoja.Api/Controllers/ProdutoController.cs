@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ProjetoLoja.Application.Services.Interfaces;
+using ProjetoLoja.Application.ViewModels;
 using System.Threading.Tasks;
 
 namespace ProjetoLoja.Api.Controllers
@@ -22,9 +23,10 @@ namespace ProjetoLoja.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CadastrarProduto()
+        public async Task<IActionResult> CadastrarProduto([FromBody] NovoProdutoViewModel vm)
         {
-            return Ok();
+            var result = await _produtoAppService.CadastrarProduto(vm);
+            return Ok(result);
         }
     }
 }

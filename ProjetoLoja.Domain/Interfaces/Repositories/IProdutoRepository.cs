@@ -4,8 +4,9 @@ using System.Threading.Tasks;
 
 namespace ProjetoLoja.Domain.Interfaces.Repositories
 {
-    public interface IProdutoRepository
+    public interface IProdutoRepository : IBaseRepository<Produto>
     {
         Task<IEnumerable<Produto>> ListarProdutos();
+        Task CadastrarProduto(Produto produto);
     }
 }

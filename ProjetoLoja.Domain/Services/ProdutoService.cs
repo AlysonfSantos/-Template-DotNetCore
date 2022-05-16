@@ -1,6 +1,7 @@
 ﻿using ProjetoLoja.Domain.Interfaces.Repositories;
 using ProjetoLoja.Domain.Interfaces.Services;
 using ProjetoLoja.Domain.Models;
+using ProjetoLoja.Domain.Models.Commands;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -17,6 +18,14 @@ namespace ProjetoLoja.Domain.Services
         public async Task<IEnumerable<Produto>> ListarProdutos()
         {
             return await _produtoRepository.ListarProdutos();
+        }
+
+        public async Task<Produto> CadastrarProduto(Produto produto)
+        {
+            await _produtoRepository.CadastrarProduto(produto);
+            await _produtoRepository.UnitOfWork.SaveChangesAsync();
+
+            return produto;
         }
     }
 }
