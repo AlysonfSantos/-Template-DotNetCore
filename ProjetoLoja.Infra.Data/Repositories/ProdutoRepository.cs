@@ -25,5 +25,10 @@ namespace ProjetoLoja.Infra.Data.Repositories
         {
             await _context.AddAsync(produto);
         }
+
+        public async Task AtualizarProduto(Produto produto) 
+        {
+            await Task.FromResult(_context.Update(produto));
+        }
     }
 }

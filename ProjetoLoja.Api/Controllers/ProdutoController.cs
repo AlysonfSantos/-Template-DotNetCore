@@ -28,5 +28,13 @@ namespace ProjetoLoja.Api.Controllers
             var result = await _produtoAppService.CadastrarProduto(vm);
             return Ok(result);
         }
+
+        [HttpPut]
+
+        public  async Task<IActionResult> AtualizarProduto([FromBody] AtualizarProdutoViewModel vm)
+        {
+            var result = await _produtoAppService.AtualizarProduto(vm);
+            return Ok(result);
+        }
     }
 }

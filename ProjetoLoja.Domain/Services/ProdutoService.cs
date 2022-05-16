@@ -27,5 +27,17 @@ namespace ProjetoLoja.Domain.Services
 
             return produto;
         }
+
+        public async Task<Produto> AtualizarProduto(AtualizarProdutoCommand command) 
+        {
+            var produto = await _produtoRepository.Get(x => x.Id == command.Id);
+            if (produto == null) return null;
+
+            produto.Atualizar(command.Nome, command.DataLancamento, command.Valor);
+            await _produtoRepository.AtualizarProduto(produto);
+            await _produtoRepository.UnitOfWork.SaveChangesAsync();
+            return produto;
+        }
+
     }
 }

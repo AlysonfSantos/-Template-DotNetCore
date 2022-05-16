@@ -18,8 +18,10 @@ namespace ProjetoLoja.Domain.Models
             Valor = valor;
         }
 
-        public void AtualizarValor(decimal valor)
+        public void Atualizar(string nome, DateTime dataLancamento, decimal valor)
         {
+            Nome = nome;
+            DataLancamento = dataLancamento;
             Valor = valor;
         }
     }

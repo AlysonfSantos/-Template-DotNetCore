@@ -36,6 +36,20 @@ namespace ProjetoLoja.Application.Services
             return _mapper.Map<ProdutoViewModel>(produtoCadastrado);
         }
 
+        public async Task<ProdutoViewModel> AtualizarProduto(AtualizarProdutoViewModel atualizarProdutoViewModel) 
+        {
+            var command = new AtualizarProdutoCommand
+            {
+                Id = atualizarProdutoViewModel.Id,
+                DataLancamento = atualizarProdutoViewModel.DataLancamento,
+                Nome =  atualizarProdutoViewModel.Nome,
+                Valor = atualizarProdutoViewModel.Valor
+
+            };
+            var produtoAtualizado = await _produtoService.AtualizarProduto(command);
+            return _mapper.Map<ProdutoViewModel>(produtoAtualizado);
+        }
+
 
     }
 }

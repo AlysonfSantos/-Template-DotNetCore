@@ -10,6 +10,7 @@ namespace ProjetoLoja.Domain.Interfaces.Services
         Task<IEnumerable<Produto>> ListarProdutos();
 
         Task<Produto> CadastrarProduto(Produto produto);
+        Task<Produto> AtualizarProduto(AtualizarProdutoCommand command);
 
     }
 }
