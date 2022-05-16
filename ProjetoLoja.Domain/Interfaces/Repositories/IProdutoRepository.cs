@@ -9,5 +9,6 @@ namespace ProjetoLoja.Domain.Interfaces.Repositories
         Task<IEnumerable<Produto>> ListarProdutos();
         Task CadastrarProduto(Produto produto);
         Task AtualizarProduto(Produto produto);
+        Task DeletarProduto(Produto produto);
     }
 }

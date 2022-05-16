@@ -8,9 +8,8 @@ namespace ProjetoLoja.Domain.Interfaces.Services
     public interface IProdutoService
     {
         Task<IEnumerable<Produto>> ListarProdutos();
-
         Task<Produto> CadastrarProduto(Produto produto);
         Task<Produto> AtualizarProduto(AtualizarProdutoCommand command);
-
+        Task<bool> DeletarProduto(long id);
     }
 }

@@ -36,5 +36,16 @@ namespace ProjetoLoja.Api.Controllers
             var result = await _produtoAppService.AtualizarProduto(vm);
             return Ok(result);
         }
+
+        [HttpDelete]
+        [Route("{id}")]
+
+        public async Task<IActionResult> DeletarProduto(long id) 
+        {
+            var result = await _produtoAppService.DeletarProduto(id);
+            if (result) return Ok();
+            return NotFound();
+        }
+
     }
 }

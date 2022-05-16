@@ -9,5 +9,7 @@ namespace ProjetoLoja.Application.Services.Interfaces
         Task<IEnumerable<ProdutoViewModel>> ListarProdutos();
         Task<ProdutoViewModel> CadastrarProduto(NovoProdutoViewModel novoProdutoViewModel);
         Task<ProdutoViewModel> AtualizarProduto(AtualizarProdutoViewModel atualizarProdutoViewModel);
+        Task<bool> DeletarProduto(long id);
+
     }
 }

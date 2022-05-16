@@ -30,5 +30,11 @@ namespace ProjetoLoja.Infra.Data.Repositories
         {
             await Task.FromResult(_context.Update(produto));
         }
+
+        public async Task DeletarProduto(Produto produto) 
+        {
+            await Task.FromResult(_context.Remove(produto));
+        }
+    
     }
 }

@@ -39,5 +39,16 @@ namespace ProjetoLoja.Domain.Services
             return produto;
         }
 
+        public async Task<bool> DeletarProduto(long id)
+        {
+            var produto = await _produtoRepository.Get(x => x.Id == id);
+            if (produto == null) return false;
+
+            await _produtoRepository.DeletarProduto(produto);
+            await _produtoRepository.UnitOfWork.SaveChangesAsync();
+
+            return true;
+               
+        }
     }
 }

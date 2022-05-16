@@ -50,6 +50,11 @@ namespace ProjetoLoja.Application.Services
             return _mapper.Map<ProdutoViewModel>(produtoAtualizado);
         }
 
+        public async Task<bool> DeletarProduto(long id) 
+        {
+            return await _produtoService.DeletarProduto(id);
+        }
+
 
     }
 }
